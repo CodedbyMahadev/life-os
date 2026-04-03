@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt 
 import sqlite3
 from datetime import datetime
 
@@ -121,8 +122,36 @@ def best_day():
     else:
         print("❌ No data found.")
 
-# ---------------- MAIN LOOP ----------------
 print("🚀 LIFE OS PRO STARTED 🚀")
+def best_day():
+    # your code
+    pass
+
+import matplotlib.pyplot as plt
+
+def show_graph():
+    cursor.execute("SELECT study_hours, sleep_hours, water_intake FROM daily_logs")
+    data = cursor.fetchall()
+
+    if not data:
+        print("No data to display.")
+        return
+
+    study = [row[0] for row in data]
+    sleep = [row[1] for row in data]
+    water = [row[2] for row in data]
+
+    days = list(range(1, len(data)+1))
+
+    plt.plot(days, study, label="Study Hours")
+    plt.plot(days, sleep, label="Sleep Hours")
+    plt.plot(days, water, label="Water Intake")
+
+    plt.xlabel("Days")
+    plt.ylabel("Values")
+    plt.title("Life OS Progress")
+    plt.legend()
+    plt.show()
 
 while True:
     print("\n===== MENU =====")
@@ -132,7 +161,8 @@ while True:
     print("4. AI Suggestions")
     print("5. Show Streak")
     print("6. Best Day")
-    print("7. Exit")
+    print("7. Show Graph")
+    print("8. Exit")
 
     choice = input("Enter choice: ")
 
@@ -149,7 +179,8 @@ while True:
     elif choice == '6':
         best_day()
     elif choice == '7':
-        print("👋 Exiting Life OS...")
+        show_graph()
+    elif choice == '8':
         break
     else:
         print("❌ Invalid choice")
