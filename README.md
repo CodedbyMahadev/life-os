@@ -20,6 +20,7 @@ A smart productivity tracking system built using Python and SQLite.
 - Graph visualization
 - GUI interface
 - AI integration
+-  📊 Data visualization using matplotlib
 
 ---
 Made by Akanksha Kale 💻
