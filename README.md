@@ -23,3 +23,4 @@ Unlike basic trackers, this system analyzes user behavior trends and gives intel
 - Web App Version
 - Real AI Integration
 - Mobile App
+![App Screenshot](preview.png)
